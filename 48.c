@@ -4,12 +4,11 @@
 int main()
 {
 	int m,i,j;
-	int a[100];
+	int a[1000];
 	int ex;
 	
 	
 	scanf("%d",&m);
-	srand(m);
 	
 	for(i = 0; i < m; i++)
 	{
@@ -29,18 +28,6 @@ int main()
 		}
 	}
 	
-	
-	
-	
-		for(i = 0; i < m; i++)
-	{
-		printf("%d ",a[i]);
-	}
-	printf("\n");
-	
-	
-	
-	
 	for(i = 0; i < m - 1; i++)
 	{
 		for(j = i + 1;j < m;j++)
@@ -49,7 +36,6 @@ int main()
 			{
 				m = m - 1;
 				a[j] = a[j + 1];
-				printf("%d \n",a[i]);
 			}
 		}
 	}
