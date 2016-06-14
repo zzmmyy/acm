@@ -5,6 +5,7 @@ int main()
 {
 	int m,i,j;
 	int a[100];
+	int ex;
 	
 	
 	scanf("%d",&m);
@@ -14,10 +15,24 @@ int main()
 	{
 		a[i] = rand() % 1000 + 1;
 	}
-	
-	
-	
+		
 	for(i = 0; i < m; i++)
+	{
+		for(j = i + 1; j < m; j++)
+		{
+			if(a[i] > a[j])
+			{
+				ex = a[i];
+				a[i] = a[j];
+				a[j] = ex;
+			}
+		}
+	}
+	
+	
+	
+	
+		for(i = 0; i < m; i++)
 	{
 		printf("%d ",a[i]);
 	}
