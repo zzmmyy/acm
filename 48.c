@@ -1,48 +1,35 @@
-#include<stdio.h>
-#include<stdlib.h>
-
+#include<iostream>
+using namespace std;
+//#include<time.h>
+//#include<cstdlib> 
+#include<algorithm>
 int main()
 {
-	int m,i,j;
-	int a[1000];
-	int ex;
-	
-	
-	scanf("%d",&m);
-	
-	for(i = 0; i < m; i++)
-	{
-		a[i] = rand() % 1000 + 1;
-	}
-		
-	for(i = 0; i < m; i++)
-	{
-		for(j = i + 1; j < m; j++)
-		{
-			if(a[i] > a[j])
-			{
-				ex = a[i];
-				a[i] = a[j];
-				a[j] = ex;
-			}
-		}
-	}
-	
-	for(i = 0; i < m - 1; i++)
-	{
-		for(j = i + 1;j < m;j++)
-		{
-			if(a[i] == a[j])
-			{
-				m = m - 1;
-				a[j] = a[j + 1];
-			}
-		}
-	}
-	printf("%d\n",m); 
-	
-	for(i = 0; i < m; i++)
-	{
-		printf("%d ",a[i]);
-	}
+int n, i, j, num;
+int a[1000];
+//srand(time(NULL));
+while(cin >> n)
+{
+num = 0;
+for(i = 0; i < n; ++i)
+{
+cin >> a[i];
+//cout << (a[i] = rand()%1000 + 1) << ' ';
+for(j = 0; j < i; ++j)
+{
+if(a[j] == a[i])
+{
+a[i] = 0;
+}
+}
+}
+//	cout << endl;
+sort(a, a + n);
+i = -1;
+while(!a[++i]);
+cout << (num = n - i) << endl;
+for(; i < n; ++i)
+cout << a[i] << ' ';
+cout << endl;
+}
 }
