@@ -11,13 +11,15 @@ int main()
 		int a = 0;
 		while(m % 10 != 0 && n % 10 != 0)
 		{
-			sum = m % 10 + n % 10;
+			sum += m % 10 + n % 10;
 			m /= 10;
 			n /= 10;
 			if(sum >= 10)
 			{
 				sum = 1;
 				a++;
+			}else{
+				sum = 0;
 			}
 		}
 		cout<<a<<endl;
